@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cz.tyr.android.legoirc.Main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/surface"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/videoImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:contentDescription="@string/layout_content_desc_video"
+            android:src="@drawable/play"
+            android:onClick="playPauseVideo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/menuImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:contentDescription="@string/layout_content_desc_menu"
+            android:onClick="showMenu"
+            android:src="@drawable/settings" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_joystick_left"
+        android:layout_width="@dimen/joystick_size"
+        android:layout_height="@dimen/joystick_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:background="@drawable/joystick_bg_vertical" />
+
+    <RelativeLayout
+        android:id="@+id/layout_joystick_right"
+        android:layout_width="@dimen/joystick_size"
+        android:layout_height="@dimen/joystick_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:background="@drawable/joystick_bg_horizontal" />
+
+</RelativeLayout>

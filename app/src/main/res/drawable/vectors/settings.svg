@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32"
+   height="32"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="settings.svg"
+   inkscape:export-filename="/home/jtyr/Documents/projects/android/LegoIRController/app/src/main/res/drawable/settings.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="12.96875"
+     inkscape:cx="16"
+     inkscape:cy="16"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1368"
+     inkscape:window-height="623"
+     inkscape:window-x="277"
+     inkscape:window-y="183"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       orientation="1,0"
+       position="0,457.14286"
+       id="guide2985" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="32,462.85714"
+       id="guide2987" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="108.57143,32"
+       id="guide2989" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="162.85714,0"
+       id="guide2991" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="4,22.438554"
+       id="guide2993" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="28,22.978313"
+       id="guide2995" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="11.257831,4"
+       id="guide2997" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="8.2506024,28"
+       id="guide3001" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-12.491566,8"
+       id="guide4501" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-14.110843,24"
+       id="guide4503" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1020.3622)">
+    <path
+       style="opacity:0.8;fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M 16 4 C 9.372583 4 4 9.372583 4 16 C 4 22.627417 9.372583 28 16 28 C 22.627417 28 28 22.627417 28 16 C 28 9.372583 22.627417 4 16 4 z M 14.34375 8 L 17.5625 8 C 17.723304 8 17.9554 8.16505 17.875 8.40625 L 18.1875 10.5 C 18.669912 10.7412 19.160489 10.95965 19.5625 11.28125 L 21.5625 10.5 C 21.803706 10.4192 21.9821 10.4825 22.0625 10.5625 L 23.65625 13.375 C 23.736654 13.5358 23.754554 13.7142 23.59375 13.875 L 21.90625 15.25 C 21.98665 15.4912 21.96875 15.70965 21.96875 16.03125 C 21.96875 16.35285 21.90625 16.60255 21.90625 16.84375 L 23.75 18.125 C 23.9108 18.2054 23.92415 18.4642 23.84375 18.625 L 22.21875 21.4375 C 22.138348 21.5983 21.910804 21.67375 21.75 21.59375 L 19.71875 20.78125 C 19.316739 21.10285 18.857412 21.35255 18.375 21.59375 L 18.03125 23.6875 C 18.03125 23.8483 17.785804 24 17.625 24 L 14.40625 24 C 14.165044 24 14.03125 23.8483 14.03125 23.6875 L 13.6875 21.59375 C 13.205088 21.35255 12.74576 21.10285 12.34375 20.78125 L 10.3125 21.59375 C 10.071294 21.67455 9.924152 21.58 9.84375 21.5 L 8.21875 18.6875 C 8.138348 18.5267 8.151696 18.37955 8.3125 18.21875 L 10 16.84375 C 9.919598 16.60255 9.90625 16.35285 9.90625 16.03125 C 9.90625 15.70965 10 15.4912 10 15.25 L 8.3125 13.9375 C 8.151696 13.7767 8.075848 13.54875 8.15625 13.46875 L 9.75 10.65625 C 9.910804 10.49545 10.071294 10.42 10.3125 10.5 L 12.25 11.28125 C 12.732412 10.95965 13.142588 10.6608 13.625 10.5 L 13.9375 8.3125 C 13.9375 8.1517 14.182946 8 14.34375 8 z M 15.9375 13.21875 C 14.409861 13.21875 13.125 14.50365 13.125 16.03125 C 13.125 17.55885 14.409861 18.84375 15.9375 18.84375 C 17.465138 18.84375 18.75 17.55885 18.75 16.03125 C 18.75 14.50365 17.465138 13.21875 15.9375 13.21875 z "
+       transform="translate(0,1020.3622)"
+       id="path3003" />
+  </g>
+</svg>

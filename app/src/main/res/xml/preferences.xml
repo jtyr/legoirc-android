@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preferences_general_category_title">
+        <EditTextPreference
+            android:defaultValue="@string/preferences_host_default"
+            android:dialogTitle="@string/preferences_host_dialog_title"
+            android:key="host"
+            android:summary="@string/preferences_host_summary"
+            android:title="@string/preferences_host_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_control_server_category_title">
+        <EditTextPreference
+            android:defaultValue="@string/preferences_port_default"
+            android:dialogTitle="@string/preferences_port_dialog_title"
+            android:inputType="numberDecimal"
+            android:key="port"
+            android:summary="@string/preferences_port_summary"
+            android:title="@string/preferences_port_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="@string/preferences_connect_at_start_default"
+            android:key="connect_at_start"
+            android:summary="@string/preferences_connect_at_start_summary"
+            android:title="@string/preferences_connect_at_start_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_cam_category_title">
+        <CheckBoxPreference
+            android:defaultValue="@string/preferences_cam_enable_default"
+            android:key="cam_enable"
+            android:summary="@string/preferences_cam_enable_summary"
+            android:title="@string/preferences_cam_enable_title" />
+
+        <EditTextPreference
+            android:defaultValue="@string/preferences_cam_port_default"
+            android:dependency="cam_enable"
+            android:dialogTitle="@string/preferences_cam_port_dialog_title"
+            android:inputType="numberDecimal"
+            android:key="cam_port"
+            android:summary="@string/preferences_cam_port_summary"
+            android:title="@string/preferences_cam_port_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="@string/preferences_cam_at_start_default"
+            android:dependency="cam_enable"
+            android:key="cam_at_start"
+            android:summary="@string/preferences_cam_at_start_summary"
+            android:title="@string/preferences_cam_at_start_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_joystick_category_title">
+        <ListPreference
+            android:defaultValue="@string/preferences_joystick_size_default"
+            android:dialogTitle="@string/preferences_joystick_size_dialog_title"
+            android:entries="@array/preferences_joystick_size_item_names"
+            android:entryValues="@array/preferences_joystick_size_item_values"
+            android:key="joystick_size"
+            android:summary="@string/preferences_joystick_size_summary"
+            android:title="@string/preferences_joystick_size_title" />
+        <ListPreference
+            android:defaultValue="@string/preferences_joystick_deadzone_default"
+            android:dialogTitle="@string/preferences_joystick_deadzone_dialog_title"
+            android:entries="@array/preferences_joystick_deadzone_item_names"
+            android:entryValues="@array/preferences_joystick_deadzone_item_values"
+            android:key="joystick_deadzone"
+            android:summary="@string/preferences_joystick_deadzone_summary"
+            android:title="@string/preferences_joystick_deadzone_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_other_category_title">
+        <CheckBoxPreference
+            android:defaultValue="@string/preferences_debug_default"
+            android:key="debug"
+            android:summary="@string/preferences_debug_summary"
+            android:title="@string/preferences_debug_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
