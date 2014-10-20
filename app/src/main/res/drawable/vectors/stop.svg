@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32"
+   height="32"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="stop.svg"
+   inkscape:export-filename="/home/tyr/Documents/projects/android/LegoIRController/app/src/main/res/drawable/pause.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="12.96875"
+     inkscape:cx="16"
+     inkscape:cy="16"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1368"
+     inkscape:window-height="623"
+     inkscape:window-x="175"
+     inkscape:window-y="295"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       orientation="1,0"
+       position="0,457.14286"
+       id="guide2985" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="32,462.85714"
+       id="guide2987" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="108.57143,32"
+       id="guide2989" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="162.85714,0"
+       id="guide2991" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="4,22.438554"
+       id="guide2993" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="28,22.978313"
+       id="guide2995" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="11.257831,4"
+       id="guide2997" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="8.2506024,28"
+       id="guide3001" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="20.742169,20"
+       id="guide3953" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-7.2481928,12"
+       id="guide3955" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1020.3622)">
+    <path
+       style="opacity:0.8;fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M 16,4 C 9.372583,4 4,9.372583 4,16 4,22.627417 9.372583,28 16,28 22.627417,28 28,22.627417 28,16 28,9.372583 22.627417,4 16,4 z m -4.009878,7.990122 8.019756,0 0,8.019756 -8.019756,0 z"
+       transform="translate(0,1020.3622)"
+       id="path3003"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssssccccc" />
+  </g>
+</svg>

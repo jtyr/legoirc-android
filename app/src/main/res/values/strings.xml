@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- MAIN -->
+    <string name="app_name">LEGO IR Controller</string>
+
+    <string name="title_activity_main">LEGO IRC</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="shared_preferences_error">Error reading shared preferences</string>
+
+    <string name="connection_disconnected">Disconnected</string>
+    <string name="connection_shutdown_dialog">Do you really want to shutdown the RPi server?</string>
+    <string name="connection_shutdown">Shutting down server</string>
+    <string name="connection_error">Can not connect to the server</string>
+
+    <string name="menu_settings">Settings</string>
+    <string name="menu_connect_disconnect">Disconnect from server</string>
+    <string name="menu_connect_connect">Connect to server</string>
+    <string name="menu_shutdown">Shutdown RPi server</string>
+
+    <string name="layout_content_desc_video">Video</string>
+    <string name="layout_content_desc_menu">Menu</string>
+
+    <string name="player_create_error">Error creating player!</string>
+
+    <!-- PREFERENCES -->
+    <string name="preferences_general_category_title">General</string>
+    <string name="preferences_host_title">Host address</string>
+    <string name="preferences_host_summary">Address of the RPi server</string>
+    <string name="preferences_host_default">127.0.0.1</string>
+    <string name="preferences_host_dialog_title">Host address</string>
+
+    <string name="preferences_control_server_category_title">Control Server</string>
+    <string name="preferences_port_title">Port number</string>
+    <string name="preferences_port_summary">Port number of the control server</string>
+    <string name="preferences_port_default">5001</string>
+    <string name="preferences_port_dialog_title">Port number</string>
+    <string name="preferences_connect_at_start_title">Connect at start</string>
+    <string name="preferences_connect_at_start_summary">Connect to the control server at the start of the application</string>
+    <string name="preferences_connect_at_start_default">false</string>
+
+    <string name="preferences_cam_category_title">Camera</string>
+    <string name="preferences_cam_enable_title">Use camera</string>
+    <string name="preferences_cam_enable_summary">Allow to use the camera connected to the RPi</string>
+    <string name="preferences_cam_enable_default">false</string>
+    <string name="preferences_cam_port_title">Port number</string>
+    <string name="preferences_cam_port_summary">Video stream port number</string>
+    <string name="preferences_cam_port_default">8160</string>
+    <string name="preferences_cam_port_dialog_title">Port number</string>
+    <string name="preferences_cam_at_start_title">Stream at start</string>
+    <string name="preferences_cam_at_start_summary">Start the video stream playback at the start of the application</string>
+    <string name="preferences_cam_at_start_default">false</string>
+
+    <string name="preferences_joystick_category_title">Joystick</string>
+    <string name="preferences_joystick_size_title">Size</string>
+    <string name="preferences_joystick_size_summary">Size of the joystick</string>
+    <string name="preferences_joystick_size_default">200</string>
+    <string name="preferences_joystick_size_dialog_title">Joystick size</string>
+    <string-array name="preferences_joystick_size_item_names">
+        <item>Big</item>
+        <item>Medium</item>
+        <item>Small</item>
+    </string-array>
+    <string-array name="preferences_joystick_size_item_values">
+        <item>250</item>
+        <item>200</item>
+        <item>150</item>
+    </string-array>
+    <string name="preferences_joystick_deadzone_title">Deadzone</string>
+    <string name="preferences_joystick_deadzone_summary">Size of the deadzone</string>
+    <string name="preferences_joystick_deadzone_default">20</string>
+    <string name="preferences_joystick_deadzone_dialog_title">Deadzone size</string>
+    <string-array name="preferences_joystick_deadzone_item_names">
+        <item>Big</item>
+        <item>Small</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="preferences_joystick_deadzone_item_values">
+        <item>20</item>
+        <item>10</item>
+        <item>0</item>
+    </string-array>
+
+    <string name="preferences_other_category_title">Other</string>
+    <string name="preferences_debug_title">Debug</string>
+    <string name="preferences_debug_summary">Show debug messages in the Logcat output</string>
+    <string name="preferences_debug_default">false</string>
+
+</resources>
