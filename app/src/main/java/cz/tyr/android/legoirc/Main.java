@@ -61,6 +61,9 @@ public class Main extends Activity implements SurfaceHolder.Callback, IVideoPlay
     // Reference to the shared preferences
     private SharedPreferences preferences;
 
+    // Reference to the shared configuration
+    private Config config;
+
     // Reference to the AsyncTask
     private LegoIrcServerTask legoIrcServerTask;
 
@@ -89,32 +92,9 @@ public class Main extends Activity implements SurfaceHolder.Callback, IVideoPlay
         // Inflate the main layout
         setContentView(cz.tyr.android.legoirc.R.layout.activity_main);
 
-        // Read shared preferences
+        // Read shared preferences and config
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String host = preferences.getString(PreferencesActivity.HOST, getString(PreferencesActivity.DEFAULT_HOST));
-        DEBUG = preferences.getBoolean(PreferencesActivity.DEBUG, Boolean.parseBoolean(getString(PreferencesActivity.DEFAULT_DEBUG)));
-        int joystickSize = Integer.parseInt(preferences.getString(PreferencesActivity.JOYSTICK_SIZE, getString(PreferencesActivity.DEFAULT_JOYSTICK_SIZE)));
-        int joystickDeadzone = Integer.parseInt(preferences.getString(PreferencesActivity.JOYSTICK_DEADZONE, getString(PreferencesActivity.DEFAULT_JOYSTICK_DEADZONE)));
-        boolean connect_at_start = preferences.getBoolean(PreferencesActivity.CONNECT_AT_START, Boolean.parseBoolean(getString(PreferencesActivity.DEFAULT_CONNECT_AT_START)));
-        boolean cam_enable = preferences.getBoolean(PreferencesActivity.CAM_ENABLE, Boolean.parseBoolean(getString(PreferencesActivity.DEFAULT_CAM_ENABLE)));
-        boolean cam_at_start = false;
-        if (cam_enable) {
-            cam_at_start = preferences.getBoolean(PreferencesActivity.CAM_AT_START, Boolean.parseBoolean(getString(PreferencesActivity.DEFAULT_CAM_AT_START)));
-        }
-        int port = 0;
-        int videoPort = 0;
-        try {
-            port = Integer.parseInt(preferences.getString(PreferencesActivity.PORT, getString(PreferencesActivity.DEFAULT_PORT)));
-            videoPort = Integer.parseInt(preferences.getString(PreferencesActivity.CAM_PORT, getString(PreferencesActivity.DEFAULT_CAM_PORT)));
-        } catch (Exception e) {
-            Toast.makeText(context, getString(cz.tyr.android.legoirc.R.string.shared_preferences_error), Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
-
-        // URL to play
-        videoURL = "http://" + host + ":" + videoPort;
-        if (DEBUG)
-            Log.d(TAG, "Video URL: " + videoURL);
+        config = new Config();
 
         // Play/pause video button
         videoImageButton = (ImageButton) findViewById(cz.tyr.android.legoirc.R.id.videoImageButton);
@@ -124,20 +104,20 @@ public class Main extends Activity implements SurfaceHolder.Callback, IVideoPlay
         RelativeLayout joystickRightLayout = (RelativeLayout) findViewById(cz.tyr.android.legoirc.R.id.layout_joystick_right);
         jsLeft = new Joystick(getApplicationContext(), joystickLeftLayout, cz.tyr.android.legoirc.R.drawable.image_button);
         jsRight = new Joystick(getApplicationContext(), joystickRightLayout, cz.tyr.android.legoirc.R.drawable.image_button);
-        joystickLeftLayout.setOnTouchListener(new JoystickOnTouchListener(jsLeft, JoystickOnTouchListener.JOYSTICK_TYPE_VERTICAL, joystickSize, joystickDeadzone));
-        joystickRightLayout.setOnTouchListener(new JoystickOnTouchListener(jsRight, JoystickOnTouchListener.JOYSTICK_TYPE_HORIZONTAL, joystickSize, joystickDeadzone));
+        joystickLeftLayout.setOnTouchListener(new JoystickOnTouchListener(jsLeft, JoystickOnTouchListener.JOYSTICK_TYPE_VERTICAL, config.joystickSize, config.joystickDeadzone));
+        joystickRightLayout.setOnTouchListener(new JoystickOnTouchListener(jsRight, JoystickOnTouchListener.JOYSTICK_TYPE_HORIZONTAL, config.joystickSize, config.joystickDeadzone));
 
         // Async task to maintain the TCP control connection
-        legoIrcServerTask = new LegoIrcServerTask(host, port);
+        legoIrcServerTask = new LegoIrcServerTask(config.host, config.port);
         legoIrcServerTask.execute();
 
         // Connect to the server at start if set so
-        if (connect_at_start) {
+        if (config.connect_at_start) {
             legoIrcServerTask.connect();
         }
 
         // Start video playback it set so
-        if (cam_at_start) {
+        if (config.cam_at_start) {
             createPlayer(videoURL);
             setIsPlaying(true);
         } else {
@@ -146,6 +126,47 @@ public class Main extends Activity implements SurfaceHolder.Callback, IVideoPlay
 
         // Configure layout according to shared preferences
         configureLayout();
+    }
+
+    private class Config {
+        private String host;
+        private int joystickSize;
+        private int joystickDeadzone;
+        boolean connect_at_start;
+        boolean cam_enable;
+        boolean cam_at_start;
+        int port;
+
+        public Config() {
+            this.load();
+        }
+
+        private void load() {
+            host = preferences.getString(PreferencesActivity.HOST, getString(PreferencesActivity.DEFAULT_HOST));
+            DEBUG = preferences.getBoolean(PreferencesActivity.DEBUG, Boolean.parseBoolean(getString(PreferencesActivity.DEFAULT_DEBUG)));
+            joystickSize = Integer.parseInt(preferences.getString(PreferencesActivity.JOYSTICK_SIZE, getString(PreferencesActivity.DEFAULT_JOYSTICK_SIZE)));
+            joystickDeadzone = Integer.parseInt(preferences.getString(PreferencesActivity.JOYSTICK_DEADZONE, getString(PreferencesActivity.DEFAULT_JOYSTICK_DEADZONE)));
+            connect_at_start = preferences.getBoolean(PreferencesActivity.CONNECT_AT_START, Boolean.parseBoolean(getString(PreferencesActivity.DEFAULT_CONNECT_AT_START)));
+            cam_enable = preferences.getBoolean(PreferencesActivity.CAM_ENABLE, Boolean.parseBoolean(getString(PreferencesActivity.DEFAULT_CAM_ENABLE)));
+            cam_at_start = false;
+            if (cam_enable) {
+                cam_at_start = preferences.getBoolean(PreferencesActivity.CAM_AT_START, Boolean.parseBoolean(getString(PreferencesActivity.DEFAULT_CAM_AT_START)));
+            }
+            port = 0;
+            int videoPort = 0;
+            try {
+                port = Integer.parseInt(preferences.getString(PreferencesActivity.PORT, getString(PreferencesActivity.DEFAULT_PORT)));
+                videoPort = Integer.parseInt(preferences.getString(PreferencesActivity.CAM_PORT, getString(PreferencesActivity.DEFAULT_CAM_PORT)));
+            } catch (Exception e) {
+                Toast.makeText(context, getString(cz.tyr.android.legoirc.R.string.shared_preferences_error), Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+
+            // URL to play
+            videoURL = "http://" + host + ":" + videoPort;
+            if (DEBUG)
+                Log.d(TAG, "Video URL: " + videoURL);
+        }
     }
 
     private class JoystickOnTouchListener implements View.OnTouchListener  {
@@ -214,7 +235,7 @@ public class Main extends Activity implements SurfaceHolder.Callback, IVideoPlay
     }
 
     private class LegoIrcServerTask extends AsyncTask<String, Integer, Object> {
-        private String address;
+        private String host;
         private int port;
         private Socket sock = null;
         private PrintStream out = null;
@@ -237,8 +258,16 @@ public class Main extends Activity implements SurfaceHolder.Callback, IVideoPlay
         private final int DIR_RIGHT = 6;
         private final int DIR_STOP = 5;
 
-        LegoIrcServerTask(String address, int port){
-            this.address = address;
+        LegoIrcServerTask(String host, int port){
+            this.host = host;
+            this.port = port;
+        }
+
+        public void setHost(String host) {
+            this.host = host;
+        }
+
+        public void setPort(int port) {
             this.port = port;
         }
 
@@ -411,11 +440,11 @@ public class Main extends Activity implements SurfaceHolder.Callback, IVideoPlay
 
             if (sock == null) {
                 if (DEBUG)
-                    Log.d(TAG, "Trying to connect to " + address + ":" + port);
+                    Log.d(TAG, "Trying to connect to " + host + ":" + port);
 
                 // Try to connect
                 try {
-                    sock = new Socket(address, port);
+                    sock = new Socket(host, port);
                 } catch (Exception e) {
                     Log.e(TAG, "Can not create socket: " + e.getMessage());
                 }
@@ -597,6 +626,13 @@ public class Main extends Activity implements SurfaceHolder.Callback, IVideoPlay
         if (getIsPlaying()) {
             createPlayer(videoURL);
         }
+
+        // Reload shared config
+        config.load();
+
+        // Set host and port if changed
+        legoIrcServerTask.setHost(config.host);
+        legoIrcServerTask.setPort(config.port);
 
         // Refresh layout
         configureLayout();
